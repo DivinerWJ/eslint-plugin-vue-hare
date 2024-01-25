@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-vue-hare",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "eslint-plugin-vue-hare",
   "keywords": [
     "eslint",
@@ -36,5 +36,8 @@
   "peerDependencies": {
     "eslint": ">=7"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "files": [
+    "lib"
+  ]
 }
