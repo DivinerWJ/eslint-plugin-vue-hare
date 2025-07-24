@@ -34,6 +34,54 @@ ruleTester.run('no-v-for-index-as-key', rule, {
       };
       </script>
       `,
+    },
+    // 测试template元素不需要key（应该通过）
+    {
+      code: `
+      <template>
+        <div>
+          <template v-for="(item, index) in items">
+            <div :key="item.id">{{item}}</div>
+          </template>
+        </div>
+      </template>
+      
+      <script>
+      export default {};
+      </script>
+      `,
+    },
+    // 测试slot元素不需要key（应该通过）
+    {
+      code: `
+      <template>
+        <div>
+          <slot v-for="(item, index) in items">
+            <div :key="item.id">{{item}}</div>
+          </slot>
+        </div>
+      </template>
+      
+      <script>
+      export default {};
+      </script>
+      `,
+    },
+    // 测试transition元素不需要key（应该通过）
+    {
+      code: `
+      <template>
+        <div>
+          <transition v-for="(item, index) in items">
+            <div :key="item.id">{{item}}</div>
+          </transition>
+        </div>
+      </template>
+      
+      <script>
+      export default {};
+      </script>
+      `,
     }
   ],
   invalid: [
